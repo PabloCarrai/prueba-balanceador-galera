@@ -1,0 +1,10 @@
+services:
+  haproxy-galera:
+    image: haproxy:2.8-alpine
+    container_name: haproxy-galera
+    ports:
+      - "3306:3306"
+      - "80:8080"
+    volumes:
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+    restart: always
